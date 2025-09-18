@@ -1,6 +1,5 @@
 # rodar no cmd
 #pip install flask
-
 #importar a bliblioteca flask
 from flask import flask
 #criar uma instancia da aplicação flask
@@ -16,3 +15,4 @@ def hello_world()
 #executa o servidor de desenvolvimento
 if __name__ == '__main__':
     app.run(debug=True)
+
