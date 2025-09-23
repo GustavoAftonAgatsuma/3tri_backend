@@ -1,18 +1,22 @@
-# rodar no cmd
-#pip install flask
-#importar a bliblioteca flask
-from flask import flask
-#criar uma instancia da aplicação flask
-app = flask(__name__)
-#este é um decorador que assosia a URL
-# '/' (a URL raiz do site) à função que vem logo abaixo
-@app.route('/")
-#a função que é executada quando a rota '/' é acessada
-#ela retorna a string "Hello, World!""
-def hello_world()
-    return 'Hello, World!'
+from flask import Flask, render_template]
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+        return render_template('index.html')
 
-#executa o servidor de desenvolvimento
+@app.route('/login', methods=['GET','POST'])
+def login():
+        error = None
+        if request.method == 'POST':
+            username = request.from['username']
+            password = request.from['password']
+            if username == 'admin' and password == 'password':
+                   return 'login com sucesso' 
+            else:
+                   error = 'Credenciais invalidas. Tente novamente.'
+        return render_template('login.html', error=error)
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
-
+       port = int(os.envior.get('PORT',5000))
+       app.run(host='0.0.0.0')
