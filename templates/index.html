@@ -7,7 +7,19 @@ index.html
     <title>Meu App Flask</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Este é o meu primeiro site no Render!</p>
+   <script> 
+    const user = admin
+    const pws = admin123
+
+    const userDigitado = document.getElementById('usuario').value()
+    const pwdDigitado = document.getElementById('senha').value()
+
+    if(user === userDigitado && pwd === pwdDigitado){
+        alert('Login realizado com sucesso!')
+    } else {
+        alert('Usuário ou senha incorretos')
+    }
+    </script>
+    
 </body>
 </html>
